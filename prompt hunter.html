@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Hunter - LLM Prompt Encoding and Manipulation Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prompt Hunter</h1>
+        <h2>Prompt encoding and manipulation for GenAI security testing</h2>
+        <h4>Author: Sergiu Sechel, PhD</h4>
+        <div id="promptTypeSection">
+            <label for="promptType">Select prompt type:</label>
+            <select id="promptType">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+        
+        <textarea id="systemPrompt" placeholder="Enter the system prompt..."></textarea>
+        <textarea id="userInput" placeholder="Enter the user input..."></textarea>
+        <textarea id="assistantResponse" placeholder="Enter the assistant response..."></textarea>
+        <textarea id="userInput_2" placeholder="Enter the user input..."></textarea>
+        
+        <select id="encodingOptions">
+            <option value="leetspeak">Encode to leetspeak</option>
+            <option value="hex">Encode to HEX</option>
+            <option value="binary">Encode to binary</option>
+            <option value="base64">Encode to base64</option>
+            <option value="unicode">Encode with Unicode Substitution</option>
+            <option value="ascii">Encode with ASCII Substitution</option>
+            <option value="cyrillic">Encode with Cyrillic Substitution</option>
+            <option value="typo">Encode with Typographical Errors</option>
+        </select>
+        <button onclick="encodeText()">Encode Prompt</button>
+        
+        <div id="resultContainer">
+            <h2>Encoded Prompts:</h2>
+            <div id="encodedSystemPrompt"></div>
+            <div id="encodedUserInput"></div>
+            <div id="encodedAssistantResponse"></div>
+            <div id="encodedUserInput_2"></div>
+        </div>
+
+        <div id="jsonContainer">
+            <h2>Encoded Prompt JSON:</h2>
+            <pre id="generatedJson"></pre>
+        </div>
+
+        <div id="jsonContainer2">
+            <h2>Encoded Test Prompt JSON:</h2>
+            <pre id="generatedJson2"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
